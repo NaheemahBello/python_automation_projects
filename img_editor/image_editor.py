@@ -7,7 +7,7 @@ edited_images = '/edited_images'
 for filename in os.listdir(images):
     img = Image.open(f"{images}/{filename}")
     
-    edit = img.filter(ImageFilter.BLUR)
+    edit = img.filter(ImageFilter.SHARPEN).convert("L")
     
     clean_name = os.path.splitext(filename)[0]
     
